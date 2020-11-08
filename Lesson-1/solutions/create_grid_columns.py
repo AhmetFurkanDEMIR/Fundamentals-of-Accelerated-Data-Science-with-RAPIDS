@@ -1,0 +1,5 @@
+n_cupy_array, e_cupy_array = latlong2osgbgrid_cupy(cupy_lat, cupy_long)
+gdf['northing'] = cudf.Series(n_cupy_array).astype('float32')
+gdf['easting'] = cudf.Series(e_cupy_array).astype('float32')
+print(gdf.dtypes)
+gdf.head()
